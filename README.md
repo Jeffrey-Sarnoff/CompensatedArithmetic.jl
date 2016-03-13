@@ -1,2 +1,2 @@
-## CompensatedArithmetic.jl
+## CompensatedArithmetic
 accurate arithmetic using compensated algorithms
