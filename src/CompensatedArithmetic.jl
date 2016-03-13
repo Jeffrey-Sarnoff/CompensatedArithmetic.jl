@@ -1,0 +1,3 @@
+module CompensatedArithmetic
+
+end # module
