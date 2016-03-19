@@ -1,6 +1,6 @@
 function csdSum{T<:AbstractFloat}(x::Vector{T})
     for i in 2:length(x)
-        x[i], x[i-1] = eftAdd(x[i], x[i+1])
+        x[i], x[i-1] = eftAdd(x[i], x[i-1])
     end
     sum(x[1:(end-1)]) + x[end]              # as if rounded from 2x significant bits
 end    
