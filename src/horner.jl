@@ -28,6 +28,21 @@ function eftHorner{T<:AbstractFloat}(p::Poly{T},x::T)
     r, pa, pb
 end
 
+function sumHorner{T<:AbstractFloat}(a::Vector{T}, b::Vector{T}, x::T)
+   vlen = min(length(a),length(b))
+   r = a[vlen]+b[vlen]
+   for i in (vlen-1): -1: 1
+     r = r * x + (a[i]+b[i])
+   end
+   r
+end
+
+function csdHornerA{T<:AbstractFloat}(p::Poly{T}, x::T)
+    r, pa, pb = eftHorner(p,x)
+    c = sumHorner(pa,pb,x)
+    r + c
+end
+
 # as accurate as if computed at twice the working precision and then rounded to working precision
 function csdHorner{T<:AbstractFloat}(p::Poly{T}, x::T)
     r, pa, pb = eftHorner(p,x)
