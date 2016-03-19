@@ -29,7 +29,7 @@ function eftHorner{T<:AbstractFloat}(p::Poly{T},x::T)
 end
 
 # as accurate as if computed at twice the working precision and then rounded to working precision
-function cpdHorner{T<:AbstractFloat}(p::Poly{T}, x::T)
+function csdHorner{T<:AbstractFloat}(p::Poly{T}, x::T)
     r, pa, pb = eftHorner(p,x)
     pab = Poly(pa + pb)
     c = polyval(pab, x)
