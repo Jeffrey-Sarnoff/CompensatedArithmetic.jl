@@ -1,3 +1,10 @@
+function csdSum{T<:AbstractFloat}(x::Vector{T})
+    for i in 2:length(x)
+        x[i], x[i-1] = eftSum(x[i], x[i+1])
+    end
+    sum(x)                                 # as if rounded from 2x significant bits
+end    
+
 function csdDot{T<:AbstractFloat}(x::Vector{T}, y::Vector{T})
     xlen = length(x)
     if xlen != length(y)
