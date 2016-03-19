@@ -8,19 +8,6 @@ function csdSum{T<:AbstractFloat}(x::Vector{T})
     sum(y[1:(end-1)]) + y[end]              # as if rounded from 2x significant bits
 end    
 
-
-function csdSumK{T<:AbstractFloat}(x::Vector{T}, k::Int)
-    xlen = length(x)
-    y = zeros(T,xlen)
-    y[1] = x[1]
-    for h in 1:(k-1)
-        for i in 2:length(x)
-            y[i], y[i-1] = eftAdd(x[i], x[i-1])
-        end    
-    end
-    sum(y[1:(end-1)]) + y[end]              # as if rounded from Kx significant bits
-end 
-
 function csdDot{T<:AbstractFloat}(x::Vector{T}, y::Vector{T})
     xlen = length(x)
     if xlen != length(y)
