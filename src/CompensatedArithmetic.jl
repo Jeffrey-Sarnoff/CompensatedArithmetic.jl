@@ -1,6 +1,6 @@
 module CompensatedArithmetic
 
-export csdDot
+export csdDot, csdDet2x2, csdCross3D
 
 using ErrorfreeArithmetic
 
