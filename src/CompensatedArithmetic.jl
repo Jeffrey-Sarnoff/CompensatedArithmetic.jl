@@ -1,5 +1,7 @@
 module CompensatedArithmetic
 
+!isdefined(Float) && typealias Float AbstractFloat;
+
 export csdDot, csdDet2x2, csdCross3D, csdHorner
 
 using ErrorfreeArithmetic
