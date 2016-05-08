@@ -1,5 +1,9 @@
 
 #=
+Accurate simple zeros of polynomials in floating point arithmetic
+Stef Graillat
+Computers and Mathematics with Applications 56 (2008) 1114–1120
+
 Algorithms for Accurate, Validated and Fast Polynomial Evaluation
 Stef Graillat, Philippe Langlois and Nicolas Louvet
 Japan J. Indust. Appl. Math., 26 (2009), 191–214
