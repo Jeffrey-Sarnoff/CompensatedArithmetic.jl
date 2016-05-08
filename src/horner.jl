@@ -9,15 +9,16 @@ Computers and Mathematics with Applications 56 (2008) 1114–1120
    poly = polynomial(coeffs[a_0,a_1,..,a_N])
    poly(x) = sum[i=0:1:N]( a_i * x^i )          this the the classical Horner scheme
    
-   classicalHorner{R<:Real}(p::polynomial,x::R)
-      n = length(p.coeffs)
+   function classicalHorner{R<:Real}(p::Poly,x::R)
+      n = length(p.a)
       s = zeros(R, n)       # one-based indexing
-      s[:] = p.coeffs[:]
+      s[:] = p.a[:]
       for i in (n-1):(-1):1
           s[i] += s[i+1]*x
       end
       s[1]
     end  
+
 
 Algorithms for Accurate, Validated and Fast Polynomial Evaluation
 Stef Graillat, Philippe Langlois and Nicolas Louvet
