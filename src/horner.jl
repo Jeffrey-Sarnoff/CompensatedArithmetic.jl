@@ -48,8 +48,10 @@ function eftHorner{T<:AbstractFloat}(p::Poly{T},x::T)
     r, pa, pb
 end
 
+# expects length(a) == length(b), length(a)>0
 function sumHorner{T<:AbstractFloat}(a::Vector{T}, b::Vector{T}, x::T)
-   vlen = min(length(a),length(b))
+   vlen = length(a)
+   ((vlen == 0)|(vlen != length(b))) && throw(ErrorException("vectors must be of the same nonzero length"))
    r = a[vlen]+b[vlen]
    for i in (vlen-1): -1: 1
      r = r * x + (a[i]+b[i])
