@@ -1,5 +1,7 @@
 #=
-    ref: Ogita, Rump, Oishi (SISC 05)
+    ref: 
+    Choosing a Twice More Accurate Dot Product Implementation by Stef Graillat
+    Ogita, Rump, Oishi (SISC 05)
 =#
 
 """ dot(x,y) as if computed at twice working precision """
