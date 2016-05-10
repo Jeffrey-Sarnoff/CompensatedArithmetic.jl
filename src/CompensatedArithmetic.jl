@@ -10,5 +10,6 @@ using ErrorfreeArithmetic
 include("arith.jl")
 include("det.jl")
 include("horner.jl")
+include("dotproduct.jl")
 
 end # module
