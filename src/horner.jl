@@ -50,12 +50,12 @@ end
 
 # expects length(a) == length(b), length(a)>0
 function sumHorner{T<:AbstractFloat}(a::Vector{T}, b::Vector{T}, x::T)
-   vlen = length(a)
-   if ((vlen == 0)|(vlen != length(b)))
+   n = length(a)
+   if ((n == 0)|(n != length(b)))
       throw(ErrorException("vectors must be of the same nonzero length"))
    end
-   r = a[vlen]+b[vlen]
-   for i in (vlen-1): -1: 1
+   r = a[n]+b[n]
+   for i in (n-1): -1: 1
      r = r * x + (a[i]+b[i])
    end
    r
